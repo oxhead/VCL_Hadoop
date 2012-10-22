@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<configuration>
+
+    <property>
+	<name>yarn.resourcemanager.address</name>
+	<value>{cluster_master_ip}:8040</value>
+    </property>
+
+    <property>
+	<name>yarn.nodemanager.local-dirs</name>
+	<value>/hadoop/yarn/local</value>
+	<final>true</final>
+    </property>
+    <property>
+	<name>yarn.nodemanager.aux-services</name>
+	<value>mapreduce.shuffle</value>
+    </property>
+    <property>
+	<name>yarn.nodemanager.resource.memory-mb</name>
+	<value>8192</value>
+    </property>
+</configuration>
