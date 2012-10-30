@@ -7,7 +7,7 @@
 
     <property>
 	<name>fs.defaultFS</name>
-	<value>hdfs://{cluster_master_ip}/</value>
+	<value>hdfs://{cluster_master_ip}:8020/</value>
 	<final>true</final>
     </property>
 

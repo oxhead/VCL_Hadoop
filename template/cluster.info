@@ -1,0 +1,8 @@
+# Cluster information
+cluster_name={cluster_name}
+cluster_master_hostname=`cat ${template_cluster_node_list} | grep master | cut -d, -f2`
+cluster_master_ip=`cat ${template_cluster_node_list} | grep master | cut -d, -f3`
+
+# Node information
+node_hostname=`hostname -s`
+node_user={node_user}
