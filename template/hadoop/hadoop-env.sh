@@ -13,6 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+#########################
+# Environment Setting   #
+#########################
+
+export HADOOP_HOME=/opt/hadoop
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_CONF_DIR=$HADOOP_HOME/conf
+export YARN_CONF_DIR=$HADOOP_HOME/conf
+
 # Set Hadoop-specific environment variables here.
 
 # The only required environment variable is JAVA_HOME.  All others are
@@ -21,8 +34,8 @@
 # remote nodes.
 
 export HADOOP_LOG_DIR=/hadoop/log
-#export HADOOP_CONF_DIR=/hadoop/conf
-#export YARN_CONF_DIR=/hadoop/conf
+export HADOOP_CONF_DIR=/opt/hadoop/conf
+export YARN_CONF_DIR=/opt/hadoop/conf
 export YARN_LOG_DIR=/hadoop/log/yarn
 
 # The java implementation to use.

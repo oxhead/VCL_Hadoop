@@ -3,24 +3,47 @@
 
 <configuration>
 
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+    <property>
+        <name>mapreduce.cluster.temp.dir</name>
+        <value>${hadoop.tmp.dir}/mapred/temp</value>
+    </property>
+    <property>
+        <name>mapreduce.cluster.local.dir</name>
+        <value>${hadoop.tmp.dir}/mapred/local</value>
+    </property>
+<!--
+    <property>
+        <name>mapreduce.job.userhistorylocation</name>
+        <value>/hadoop/log/userhistory</value>
+    </property>
+-->
+    <property>
+        <name>mapreduce.jobtracker.jobhistory.location</name>
+        <value>/hadoop/history</value>
+    </property>
+    <property>
+        <name>mapreduce.jobtracker.jobhistory.completed.location</name>
+        <value>/hadoop/history/done</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>0.0.0.0:10020</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>0.0.0.0:19888</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.intermediate-done-dir</name>
+        <value>/history/intermediate</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.done-dir</name>
+        <value>/history/done</value>
+    </property> 
 
-  <property>
-    <name>mapreduce.framework.name</name>
-    <value>yarn</value>
-  </property>
-
-  <property>
-    <name>mapreduce.cluster.temp.dir</name>
-    <value></value>
-    <description>No description</description>
-    <final>true</final>
-  </property>
-
-  <property>
-    <name>mapreduce.cluster.local.dir</name>
-    <value></value>
-    <description>No description</description>
-    <final>true</final>
-  </property>
- 
 </configuration>

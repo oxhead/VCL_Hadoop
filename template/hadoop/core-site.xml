@@ -11,4 +11,27 @@
 	<final>true</final>
     </property>
 
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/hadoop/tmp</value>
+        <final></final>
+        <description></description>
+    </property>
+
+    <property>
+        <name>hadoop.log.dir</name>
+        <value>/hadoop/log</value>
+        <final></final>
+        <description></description>
+    </property>
+
+    <property>
+	<name>mapreduce.map.memory.mb</name>
+	<value>1024</value>
+    </property>
+    <property>
+        <name>mapreduce.reduce.memory.mb</name>
+        <value>1024</value>
+    </property>
+
 </configuration>

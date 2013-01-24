@@ -20,6 +20,10 @@ tmp_conf_mapred=/tmp/mapred-site.xml
 tmp_conf_hadoop_script=/tmp/hadoop-env.sh
 tmp_conf_yarn_script=/tmp/yarn-env.sh
 tmp_conf_log=/tmp/log4j.properties
+tmp_conf_metrics_mapreduce=/tmp/hadoop-metrics.properties.mapreduce
+tmp_conf_metrics_hdfs=/tmp/hadoop-metrics.properties.hdfs
+tmp_conf_metrics2_mapreduce=/tmp/hadoop-metrics2.properties.mapreduce
+tmp_conf_metrics2_hdfs=/tmp/hadoop-metrics2.properties.hdfs
 tmp_conf_masters_mapreduce=/tmp/masters.mapreduce
 tmp_conf_slaves_mapreduce=/tmp/slaves.mapreduce
 tmp_conf_masters_hdfs=/tmp/masters.hdfs
@@ -45,6 +49,12 @@ cp ${template_node_hadoop_yarn_script} ${tmp_conf_yarn_script}
 
 # 1-7) Generate log4j.properties
 cp ${template_node_hadoop_log} ${tmp_conf_log}
+
+# 1-?) Generate hadoop-metrics.properties
+cat ${template_node_hadoop_metrics} | sed "s/{cluster_master_ip}/${mapreduce_master_ip}/g" > ${tmp_conf_metrics_mapreduce}
+cat ${template_node_hadoop_metrics} | sed "s/{cluster_master_ip}/${hdfs_master_ip}/g" > ${tmp_conf_metrics_hdfs}
+cat ${template_node_hadoop_metrics2} | sed "s/{cluster_master_ip}/${mapreduce_master_ip}/g" > ${tmp_conf_metrics2_mapreduce}
+cat ${template_node_hadoop_metrics2} | sed "s/{cluster_master_ip}/${hdfs_master_ip}/g" > ${tmp_conf_metrics2_hdfs}
 
 # 1-8) Generate masters and slaves for MapReduce
 touch ${tmp_conf_masters_mapreduce}
@@ -106,6 +116,9 @@ do
     cp ${tmp_conf_masters_mapreduce} ${target}/masters
     cp ${tmp_conf_slaves_mapreduce} ${target}/slaves
 
+    #cp ${tmp_conf_metrics_mapreduce} ${target}/hadoop-metrics.properties
+    cp ${tmp_conf_metrics2_mapreduce} ${target}/hadoop-metrics2.properties
+
 done < ${cluster_mapreduce_list}
 
 # 2_3) Copy 1-9
@@ -117,4 +130,7 @@ do
     target=${target_dir}/${ip}/hadoop
     cp ${tmp_conf_masters_hdfs} ${target}/masters
     cp ${tmp_conf_slaves_hdfs} ${target}/slaves
+
+    #cp ${tmp_conf_metrics_hdfs} ${target}/hadoop-metrics.properties
+    cp ${tmp_conf_metrics2_hdfs} ${target}/hadoop-metrics2.properties
 done < ${cluster_hdfs_list}
