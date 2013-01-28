@@ -5,7 +5,7 @@
 
   <property>
     <name>yarn.scheduler.capacity.root.queues</name>
-    <value>unfunded,default</value>
+    <value>default</value>
   </property>
   
   <property>
@@ -13,14 +13,16 @@
     <value>100</value>
   </property>
   
+  <!--
   <property>
     <name>yarn.scheduler.capacity.root.unfunded.capacity</name>
     <value>50</value>
   </property>
+  -->
   
   <property>
     <name>yarn.scheduler.capacity.root.default.capacity</name>
-    <value>50</value>
+    <value>100</value>
   </property>
 
 </configuration>
