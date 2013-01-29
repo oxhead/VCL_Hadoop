@@ -65,7 +65,10 @@ do
     host=$(echo $LINE | cut -d, -f2)
     ip=$(echo $LINE | cut -d, -f3)
 
-    echo ${ip} >> ${tmp_conf_slaves_mapreduce}
+    if [ ${node} == "slave" ]
+    then
+        echo ${ip} >> ${tmp_conf_slaves_mapreduce}
+    fi
 
 done < ${cluster_mapreduce_list}
 
