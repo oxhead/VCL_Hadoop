@@ -58,11 +58,11 @@
     </property>
     <property>
         <name>yarn.scheduler.minimum-allocation-mb</name>
-        <value>512</value>
+        <value>256</value>
     </property>
     <property>
         <name>yarn.scheduler.maximum-allocation-mb</name>
-        <value>2048</value>
+        <value>1024</value>
     </property>
     <property>
 	<name>yarn.nodemanager.resource.memory-mb</name>
@@ -70,15 +70,13 @@
     </property>
     <property>
 	<name>yarn.nodemanager.vmem-pmem-ratio</name>
-	<value>1.5</value>
+	<value>2.5</value>
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.class</name>
-	<!--
 	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
-	-->
-	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fifo.FifoScheduler</value>
 	<!--
+	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fifo.FifoScheduler</value>
 	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler</value>
 	-->
     </property>
