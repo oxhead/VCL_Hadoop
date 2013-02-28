@@ -81,7 +81,10 @@ do
     host=$(echo $LINE | cut -d, -f2)
     ip=$(echo $LINE | cut -d, -f3)
 
-    echo ${ip} >> ${tmp_conf_slaves_hdfs}
+    if [ ${node} == "slave" ]
+    then
+    	echo ${ip} >> ${tmp_conf_slaves_hdfs}
+    fi
 
 done < ${cluster_hdfs_list}
 
