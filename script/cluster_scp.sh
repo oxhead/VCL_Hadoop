@@ -6,10 +6,13 @@ script_dir="$( cd "$( dirname "$0" )" && pwd )"
 list=
 cmd=
 user=
+src=
+dest=
+dir=0
 
 function usage
 {
-    echo "usage: cluster_cmd [-c command] [-l list] [-u user] [-h]"
+    echo "usage: cluster_scp [-l list] [-u user] [-s src] [-d dest] [-r] [-h]"
 }
 
 function execute_cmd
@@ -21,13 +24,18 @@ node=$(echo $LINE | cut -d, -f1)
 host=$(echo $LINE | cut -d, -f2)
 ip=$(echo $LINE | cut -d, -f3)
 
-CMD="ssh $user@$ip $cmd"
+if [ ${dir} == 1 ]
+then
+	CMD="scp -r ${src} $user@$ip:${dest}"
+else
+	CMD="scp ${src} $user@$ip:${dest}"
+fi
 
 echo $CMD
 
-(
+#(
 eval $CMD
-) 2>&1 &
+#) 2>&1 &
 
 done < ${list} 
 }
@@ -36,9 +44,15 @@ done < ${list}
 
 while [ "$1" != "" ]; do
     case $1 in
-        -c | --command )        shift
-                                cmd=$1
-                                ;;
+	-s | --src )		shift
+				src=$1
+				;;
+	-d | --dest )		shift
+				dest=$1
+				;;
+	-r | --dir )		shift
+				dir=1;
+				;;
         -l | --list )           shift
 				list=$1
                                 ;;
