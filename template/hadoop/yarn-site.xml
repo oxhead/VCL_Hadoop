@@ -66,7 +66,7 @@
     </property>
     <property>
 	<name>yarn.nodemanager.resource.memory-mb</name>
-	<value>6500</value>
+	<value>6800</value>
     </property>
     <property>
 	<name>yarn.nodemanager.vmem-pmem-ratio</name>
@@ -74,10 +74,11 @@
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.class</name>
-	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
 	<!--
+	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
 	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fifo.FifoScheduler</value>
 	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler</value>
 	-->
+	<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.bandwidth.BandwidthAwareScheduler</value>
     </property>
 </configuration>

@@ -1,10 +1,6 @@
-master,vclv99-39,152.7.99.39
-slave,vclv99-40,152.7.99.40
-slave,vclv99-49,152.7.99.49
-slave,vclv99-60,152.7.99.60
-slave,vclv99-68,152.7.99.68
-slave,vclv99-88,152.7.99.88
-slave,vclv99-89,152.7.99.89
-slave,vclv99-90,152.7.99.90
+master,vclv99-38,152.7.99.38
+slave,vclv99-39,152.7.99.39
+slave,vclv99-98,152.7.99.98
+slave,vclv99-110,152.7.99.110
+slave,vclv99-118,152.7.99.118
 slave,vclv99-120,152.7.99.120
-slave,vclv99-128,152.7.99.128
