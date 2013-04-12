@@ -9,6 +9,11 @@
   </property>
 
   <property>
+    <name>yarn.scheduler.bandwidth-aware.balancing</name>
+    <value>true</value>
+  </property>
+
+  <property>
     <name>yarn.scheduler.bandwidth-aware.flownetwork.tasks.max</name>
     <value>100</value>
   </property>

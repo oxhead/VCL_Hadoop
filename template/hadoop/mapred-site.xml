@@ -45,5 +45,13 @@
         <name>mapreduce.jobhistory.done-dir</name>
         <value>/history/done</value>
     </property> 
+    <property>
+        <name>mapred.map.tasks.speculative.execution</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>mapreduce.job.maps</name>
+        <value>1</value>
+    </property>
 
 </configuration>
