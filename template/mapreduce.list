@@ -1,6 +1,6 @@
-master,vclv99-38,152.7.99.38
-slave,vclv99-39,152.7.99.39
-slave,vclv99-98,152.7.99.98
-slave,vclv99-110,152.7.99.110
-slave,vclv99-118,152.7.99.118
-slave,vclv99-120,152.7.99.120
+master,bn16-96.dcs.mcnc.org,152.46.16.96
+slave,bn16-118.dcs.mcnc.org,152.46.16.118
+slave,bn17-35.dcs.mcnc.org,152.46.17.35
+slave,bn17-208.dcs.mcnc.org,152.46.17.208
+slave,bn18-164.dcs.mcnc.org,152.46.18.164
+slave,bn19-33.dcs.mcnc.org,152.46.19.33

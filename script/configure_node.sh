@@ -3,6 +3,9 @@
 script_dir="$( cd "$( dirname "$0" )" && pwd )"
 . ${script_dir}/include.conf
 
+host=${1}
+sudo hostname ${host}
+
 # Configure networking & firewell
 sudo ufw disable
 

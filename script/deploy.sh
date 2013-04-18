@@ -20,10 +20,10 @@ scp -r conf/$ip/* ${node_user}@${ip}:~/conf > /dev/null
     if [ $node == "master" ]
     then
 	echo "Deploy to master node: ${host}"
-	ssh ${node_user}@${ip} "bash script/deploy_node_master.sh"
+	ssh ${node_user}@${ip} "bash script/deploy_node_master.sh ${host}"
     else
 	echo "Deploy to slave node: ${host}"
-	ssh ${node_user}@${ip} "bash script/deploy_node_slave.sh"
+	ssh ${node_user}@${ip} "bash script/deploy_node_slave.sh ${host}"
     fi
 
 ) 2>&1 >> log/${ip}.log &

@@ -17,7 +17,7 @@ tmp_conf_core=/tmp/core-site.xml
 tmp_conf_yarn=/tmp/yarn-site.xml
 tmp_conf_hdfs=/tmp/hdfs-site.xml
 tmp_conf_scheduler_capacity=/tmp/capacity-scheduler.xml
-tmp_conf_scheduler_bandwidth=/tmp/bandwidth-aware-scheduler.xml
+tmp_conf_scheduler_flow=/tmp/flow-scheduler.xml
 tmp_conf_mapred=/tmp/mapred-site.xml
 tmp_conf_hadoop_script=/tmp/hadoop-env.sh
 tmp_conf_yarn_script=/tmp/yarn-env.sh
@@ -45,7 +45,7 @@ cp ${template_node_hadoop_mapred} ${tmp_conf_mapred}
 
 # 1-x) Generate *-scheduler.xml
 cp ${template_node_hadoop_scheduler_capacity} ${tmp_conf_scheduler_capacity}
-cp ${template_node_hadoop_scheduler_bandwidth} ${tmp_conf_scheduler_bandwidth}
+cp ${template_node_hadoop_scheduler_flow} ${tmp_conf_scheduler_flow}
 
 # 1-5) Generate hadoop-env.sh
 cat ${template_node_hadoop_script} | sed "s,{library_jdk_home},${library_jdk_home},g" > ${tmp_conf_hadoop_script}
@@ -111,7 +111,7 @@ do
     cp ${tmp_conf_hdfs} ${target}
     cp ${tmp_conf_mapred} ${target}
     cp ${tmp_conf_scheduler_capacity} ${target}
-    cp ${tmp_conf_scheduler_bandwidth} ${target}
+    cp ${tmp_conf_scheduler_flow} ${target}
     cp ${tmp_conf_hadoop_script} ${target}
     cp ${tmp_conf_yarn_script} ${target}
     cp ${tmp_conf_log} ${target}
