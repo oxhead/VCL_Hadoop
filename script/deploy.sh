@@ -14,6 +14,7 @@ host=$(echo $LINE | cut -d, -f2)
 ip=$(echo $LINE | cut -d, -f3)
 
 (
+
 scp -r script ${node_user}@${ip}:~/ > /dev/null
 scp -r conf/$ip/* ${node_user}@${ip}:~/conf > /dev/null
 

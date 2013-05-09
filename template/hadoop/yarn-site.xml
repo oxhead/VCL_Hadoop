@@ -66,7 +66,7 @@
     </property>
     <property>
 	<name>yarn.nodemanager.resource.memory-mb</name>
-	<value>15000</value>
+	<value>{node_memory}</value>
     </property>
     <property>
 	<name>yarn.nodemanager.vmem-pmem-ratio</name>

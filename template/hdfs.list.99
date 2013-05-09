@@ -1,2 +1,2 @@
-master,vclv99-138,152.7.99.138
-slave,vclv99-178,152.7.99.178
+master,vclv99-138.hpc.csc.ncsu.edu,152.7.99.138,6800
+slave,vclv99-178.hpc.csc.ncsu.edu,152.7.99.178,6800

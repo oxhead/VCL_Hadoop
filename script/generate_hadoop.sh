@@ -102,12 +102,16 @@ do
     node=$(echo $LINE | cut -d, -f1)
     host=$(echo $LINE | cut -d, -f2)
     ip=$(echo $LINE | cut -d, -f3)
+    node_memory=$(echo $LINE | cut -d, -f4)
 
     target=${target_dir}/${ip}/hadoop
     mkdir -p ${target}
 
     cp ${tmp_conf_core} ${target}
     cp ${tmp_conf_yarn} ${target}
+
+    cat ${tmp_conf_yarn} | sed "s/{node_memory}/${node_memory}/g" > ${target}/yarn-site.xml
+
     cp ${tmp_conf_hdfs} ${target}
     cp ${tmp_conf_mapred} ${target}
     cp ${tmp_conf_scheduler_capacity} ${target}

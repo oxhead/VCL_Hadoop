@@ -40,8 +40,8 @@ function deploy
 
 function execute_cmd
 {
-    deploy $file "template/mapreduce.list"
-    deploy $file "template/hdfs.list"
+    deploy $file "template/mapreduce.list.demo"
+    deploy $file "template/hdfs.list.demo"
 
     execute_configure
 }
@@ -50,9 +50,9 @@ function execute_configure
 {
     echo "Start to deploy configuration..."
     rm -rf conf/*
-    bash script/generate_conf.sh ${user} template/mapreduce.list template/hdfs.list
-    bash script/deploy.sh ${user} template/mapreduce.list
-    bash script/deploy.sh ${user} template/hdfs.list
+    bash script/generate_conf.sh ${user} template/mapreduce.list.demo template/hdfs.list.demo
+    bash script/deploy.sh ${user} template/mapreduce.list.demo
+    bash script/deploy.sh ${user} template/hdfs.list.demo
 }
 
 

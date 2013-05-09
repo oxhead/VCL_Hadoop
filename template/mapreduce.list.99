@@ -1,6 +1,6 @@
-master,vclv99-38,152.7.99.38
-slave,vclv99-39,152.7.99.39
-slave,vclv99-98,152.7.99.98
-slave,vclv99-110,152.7.99.110
-slave,vclv99-118,152.7.99.118
-slave,vclv99-120,152.7.99.120
+master,vclv99-38.hpc.csc.ncsu.edu,152.7.99.38,6800
+slave,vclv99-39.hpc.csc.ncsu.edu,152.7.99.39,6800
+slave,vclv99-98.hpc.csc.ncsu.edu,152.7.99.98,6800
+slave,vclv99-110.hpc.csc.ncsu.edu,152.7.99.110,6800
+slave,vclv99-118.hpc.csc.ncsu.edu,152.7.99.118,6800
+slave,vclv99-120.hpc.csc.ncsu.edu,152.7.99.120,6800

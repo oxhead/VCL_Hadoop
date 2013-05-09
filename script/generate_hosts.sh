@@ -20,7 +20,7 @@ do
     ip=$(echo $LINE | cut -d, -f3)
 
     #echo "${ip}	${host}.hpc.csc.ncsu.edu" >> ${cluster_hosts_list}
-    echo "${ip} ${host}.dcs.mcnc.org" >> ${cluster_hosts_list}
+    echo "${ip} ${host}" >> ${cluster_hosts_list}
 
 done < ${cluster_combine_list}
 

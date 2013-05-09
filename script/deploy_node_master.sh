@@ -4,7 +4,8 @@ script_dir="$( cd "$( dirname "$0" )" && pwd )"
 . ${script_dir}/include.conf
 
 # [0] Configure host resolution
-# sudo sh -c "cat ${target_dir}/hosts >> /etc/hosts"
+echo "cat ${target_dir}/hosts >> /etc/hosts"
+sudo sh -c "cat ${target_dir}/hosts >> /etc/hosts"
 
 # [1] Configure node
 . ${script_dir}/configure_node.sh
